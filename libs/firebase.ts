@@ -1,24 +1,23 @@
-
 import { initializeApp } from "firebase/app";
-import { getApps } from 'firebase/app';
+import { getDatabase } from "firebase/database";
+// import { getFirestore } from "firebase/firestore";
 
+
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDAIn1cGnC4qyJEhAsRy6fou5I9FlrpDcw",
-  authDomain: "todo-2b258.firebaseapp.com",
-  projectId: "todo-2b258",
-  storageBucket: "todo-2b258.appspot.com",
-  messagingSenderId: "143249117792",
-  appId: "1:143249117792:web:c879f5b42857a65691e905"
+  apiKey: "AIzaSyDU2NgByRbJ2rIzifAUEUD091cXqOlkGTs",
+  authDomain: "todo-app-69cd5.firebaseapp.com",
+  databaseURL:
+    "https://todo-app-69cd5-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "todo-app-69cd5",
+  storageBucket: "todo-app-69cd5.appspot.com",
+  messagingSenderId: "402420046305",
+  appId: "1:402420046305:web:377e216baed49146af5aa0",
 };
 
 // Initialize Firebase
-const firebase = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+// const db = getFirestore(app);
 
-// Initialize Firebase app on the server (if needed)
-export const customInitApp = () => {
-  if (getApps().length <= 0) {
-    initializeApp(firebaseConfig);
-  }
-};
-
-export default firebase;
+export { db, app };
