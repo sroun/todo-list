@@ -16,7 +16,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className='container m-auto p-8'>
+        <h1 className='font-bold uppercase'>To Do List</h1>
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
