@@ -6,7 +6,7 @@ import { z } from "zod";
 
 
 /***
- * Note this controller no prepare architecture by have 
+ * Note this controller no build architecture by have 
  * domain or subdomain base on busseniss required. 
  * by create simple controller api
  * 
