@@ -52,12 +52,13 @@ export default function Home() {
     return () => {
       unsubscribe();
     };
-  })
+  }, [])
 
   const onClickTask = (props:any) => {
     setSelectedItem(props)
   }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const debouncedFilterChange = useCallback(debounce(
     (value: string) => setFilterText(value), 300),[]
   );
@@ -65,6 +66,7 @@ export default function Home() {
   const onFilterChange = (filterValue:string) => debouncedFilterChange(filterValue);
 
   const filteredItems = useMemo(() => {
+    if(!items) return []
     return Object.keys(items).filter(
       (taskId) => items[taskId].todo.toLocaleLowerCase().trim().includes(filterText.toLocaleLowerCase().trim())
     )
