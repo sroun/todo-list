@@ -86,7 +86,7 @@ export default function Home() {
             filteredItems.map((taskId: string) => ItemComponent(items[taskId], taskId, onClickTask) ) 
         ) : (
           <div className="flex items-center justify-center h-full w-full">
-            <p className="text-sm font-semibold text-gray-300">No result. Create a new one instead!</p>
+            <p className="text-sm font-semibold text-gray-300">No result. Create a new one instead! add testing</p>
           </div>
         ) }
       </div>
